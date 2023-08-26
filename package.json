@@ -1,0 +1,19 @@
+{
+  "name": "b1_7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "productApi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node productApi.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1"
+  }
+}
