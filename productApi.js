@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var port = process.env.PORT || 2424;
+var port = process.env.PORT || 2410;
 
 app.use(passport.initialize());
 
@@ -100,9 +100,11 @@ app.get("/products/:category",function(req,res){
     let price = req.query.price;
     let sort = req.query.sort;
     let list = mobiles;
-    if(q)
-        list = list.filter(p1=>p1.brand.toLowerCase()===q.toLowerCase() ||p1.category.toLowerCase()===q.toLowerCase());
-    
+    if(q){
+      q = q.toLowerCase()=="mobile"?"mobiles":q.toLowerCase();
+      list = list.filter(p1=>p1.brand.toLowerCase()===q ||p1.category.toLowerCase()===q);
+    }
+       
     if(category)
      list.filter(c1=>c1.category===category); 
           
